@@ -1,7 +1,9 @@
 name: build goapp
 
 on :
- push :
+ workflow_dispatch:
+ push:
+ 
   
 jobs :
  build :
