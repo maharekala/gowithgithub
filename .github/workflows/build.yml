@@ -19,7 +19,11 @@ jobs :
        password: ${{ secrets.DOCKER_PASSWORD }}
 
    - name: Build docker image
-     run: docker build -t goapps/gowithgithub .
+     run: docker build -t goapps .
 
-   - name: Push to Dockerhub repo
-     run: docker push  goapps/gowithgithub:latest    
+   - name: Build and push
+     uses: docker/build-push-action@v6
+     with:
+       context: .
+       push: true
+       tags: ${{ secrets.DOCKER_USERNAME}}/goapps:${{ github.sha }}
