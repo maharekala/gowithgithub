@@ -1,4 +1,4 @@
-name: build goapp
+name: build goapp on selfhosted runner
 
 on :
  workflow_dispatch:
