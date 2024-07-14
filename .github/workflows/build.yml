@@ -2,7 +2,6 @@ name: build goapp
 
 on :
  workflow_dispatch:
- push:
  
 
 jobs :
